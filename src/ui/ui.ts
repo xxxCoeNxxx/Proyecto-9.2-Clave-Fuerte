@@ -1,25 +1,25 @@
 import { validarClave } from "../motor/motor";
 import { commonPasswords } from "../modelo/model";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btnLogin = document.getElementById('btn-login')!;
-  const usuarioInput = document.getElementById('usuario') as HTMLInputElement;
-  const contraseniaInput = document.getElementById('contrasenia') as HTMLInputElement;
-  const errorContrasenia = document.getElementById('error-contrasenia')!;
+const loginForm = document.getElementById('login-form') as HTMLFormElement;
+const usuarioInput = document.getElementById('usuario') as HTMLInputElement;
+const contraseniaInput = document.getElementById('contrasenia') as HTMLInputElement;
+const errorContrasenia = document.getElementById('error-contrasenia')!;
 
-  btnLogin.addEventListener('click', () => {
-    const usuario = usuarioInput.value.trim();
-    const contrasenia = contraseniaInput.value.trim();
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // evita que se recargue la página
 
-    if (!usuario || !contrasenia) return;
+  const usuario = usuarioInput.value.trim();
+  const contrasenia = contraseniaInput.value.trim();
 
-    const resultado = validarClave(usuario, contrasenia, commonPasswords);
+  if (!usuario || !contrasenia) return;
 
-    if (!resultado.esValida) {
-      errorContrasenia.textContent = resultado.error ?? null;
-      errorContrasenia.style.display = 'block';
-    } else {
-      alert('Usuario y contraseña válidos');
-    }
-  });
+  const resultado = validarClave(usuario, contrasenia, commonPasswords);
+
+  if (!resultado.esValida) {
+    errorContrasenia.textContent = resultado.error ?? "";
+    errorContrasenia.style.display = 'block';
+  } else {
+    alert('Usuario y contraseña válidos');
+  }
 });

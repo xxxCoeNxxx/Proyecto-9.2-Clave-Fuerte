@@ -12,15 +12,17 @@
   <div class="login-container">
     <h2>Iniciar Sesión</h2>
 
-    <!-- Usuario -->
-    <input type="text" id="usuario" placeholder="Nombre de usuario">
-    <div id="error-usuario" class="error-message"></div>
+    <form id="login-form">
+      <!-- Usuario -->
+      <input type="text" id="usuario" placeholder="Nombre de usuario">
+      <div id="error-usuario" class="error-message"></div>
 
-    <!-- Contraseña -->
-    <input type="password" id="contrasenia" placeholder="Contraseña">
-    <div id="error-contrasenia" class="error-message"></div>
+      <!-- Contraseña -->
+      <input type="password" id="contrasenia" placeholder="Contraseña">
+      <div id="error-contrasenia" class="error-message"></div>
 
-    <button id="btn-login">Iniciar</button>
+      <button id="btn-login">Iniciar</button>
+    </form>
   </div>
     <script type="module" src="/src/main.ts"></script>
 </body>
