@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clave Fuerte</title>
-    <link rel="stylesheet" href="src/style.css">
-  </head>
-  <body>
-    // -------
-    <script type="module" src="src/main.ts"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+
+    <!-- Usuario -->
+    <input type="text" id="usuario" placeholder="Nombre de usuario">
+    <div id="error-usuario" class="error-message"></div>
+
+    <!-- Contraseña -->
+    <input type="password" id="contrasenia" placeholder="Contraseña">
+    <div id="error-contrasenia" class="error-message"></div>
+
+    <button id="btn-login">Ingresar</button>
+  </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
 </html>
